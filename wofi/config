@@ -1,0 +1,12 @@
+show=run,
+width=750
+height=400
+always_parse_args=true
+show_all=false
+print_command=true
+insensitive=true
+gtk_dark=true
+image_size=16
+prompt= SELECT ENTRY
+halign=fill
+location=center

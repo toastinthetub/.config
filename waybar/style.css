@@ -1,0 +1,333 @@
+* {
+    font-family: Iosevka, Material Design Icons;
+    font-size: 14px;
+}
+
+@import "mocha.css";
+
+window#waybar {
+    background-color: #141414;
+    
+}
+
+#workspaces {
+    background-color: @transparent;
+    color: @black;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 25px;
+}
+
+#workspaces button {
+    box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+    background-color: @black;
+    border-radius: 2px;
+    border-color: white;
+    margin-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    font-weight: bolder;
+    color: @transparent;
+}
+#workspaces button.urgent{
+    background: linear-gradient(45deg, @gray, @gray);
+    color: @base;
+}
+#workspaces button.persistent{
+    background: linear-gradient(45deg, @gray, @gray);
+    color: @base;
+}
+
+#workspaces button.active {
+    padding-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    padding-left: 20px;
+    padding-bottom: 3px;
+    background: linear-gradient(45deg, @white, @gray);
+    animation: gradient 40s ease infinite;
+    background-size: 300% 300%;
+    color: @base;
+    font-weight: bolder;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#custom-updates,
+#custom-weather,
+#custom-audio_idle_inhibitor,
+#custom-spotify,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-notification,
+#custom-expand,
+#custom-cycle_wall,
+#custom-ss,
+#custom-dynamic_pill,
+#mpd {
+    padding: 0 5px;
+    border: solid 1px white;
+    border-radius: 2px;
+    border-color: white;
+    background-color: @black;
+    color: @white;
+    box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    font-weight: bolder;
+}
+
+#custom-notification{
+    color: @black;
+}
+
+#custom-cycle_wall {
+    background: @black;
+    color: #141111;
+    background-size: 500% 500%;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 2px;
+    border-color: @white;
+}
+
+#custom-audio_idle_inhibitor {
+ color: @yellow;
+}
+
+#clock {
+    background: @black;
+    border: solid 1px white;
+    border-radius: 2px;
+    border-color: @white;
+    margin-right: 25px;
+    color: @white;
+    background-size: 300% 300%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.577);
+    animation: gradient 20s ease infinite;
+    font-size: 16px;
+    padding-top: 2px;
+    padding-right: 21px;
+    font-weight: bolder;
+    padding-left: 20px;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: @black;
+    color: @green;
+}
+
+#battery {
+    background-color: @black;
+    color: @green;
+    font-weight: bolder;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @black;
+        color: @white;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @black;
+    color: @yellow;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    background: @black;
+    background-size: 300% 300%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    /* background-color: #b4befe; */
+    color: @white;
+}
+
+#memory {
+    background-color: @black;
+    color: @white;
+    font-weight: bolder;
+}
+
+#disk {
+    color: @white;
+}
+
+#backlight {
+    color: @white;
+    background-color: @black;
+    font-weight: bolder;
+}
+
+#network {
+    color: white;
+    font-weight: bolder;
+}
+
+#network.disabled {
+    background-color: @white;
+}
+
+#network.disconnected {
+    background: @black;
+    color: @white;
+    font-weight: bolder;
+    padding-top: 3px;
+    padding-right: 11px;
+}
+
+#network.linked,
+#network.wifi {
+    background-color: @black;
+    color: @white;
+}
+
+#network.ethernet {
+    background-color: @black;
+}
+
+#pulseaudio {
+    background-color: @black;
+    color: @white;
+    font-weight: bolder;
+}
+
+#pulseaudio.muted {
+    background-color: @black;
+    font-weight: bolder;
+}
+
+#custom-media {
+    color: @white;
+    font-weight: bolder;
+}
+
+#custom-media.custom-spotify {
+    background-color: @black;
+    font-weight: bolder;
+}
+
+#custom-media.custom-vlc {
+    background-color: @black;
+}
+
+#temperature {
+    background-color: @black;
+    color: @white;
+}
+
+#temperature.critical {
+    background-color: @surface0;
+    color: @red;
+}
+
+#tray {
+    background-color: @black;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @black;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: @black;
+    color: @white;
+}
+
+#mpd.disconnected {
+    background-color: @black;
+}
+
+#mpd.stopped {
+    background-color: @black;
+}
+
+#mpd.paused {
+    background-color: @black;
+}
+
+#language {
+    background: @black;
+    color: @white;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: @white;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: @black;
+}
+
+@keyframes blink-update {
+	to {
+		background-color: @black;
+	}
+}
+
+#custom-updates {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+#custom-pacman.pending-updates {
+	animation-name: blink-update;
+	animation-duration: 3s;
+}
